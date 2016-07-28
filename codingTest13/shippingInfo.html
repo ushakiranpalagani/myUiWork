@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shipping Information</title>
+    <style type="text/css">
+        body {
+            padding:50px;
+            color:blue;
+            font:14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            color:red;
+        }
+        div {
+            border:5px;
+            border-style:double;
+            padding:20px;
+            width:350px;
+        }
+        label {
+            width:130px;
+        }
+        input[type="text"] {
+            display: block;
+            margin: 0;
+            width: 100%;
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div>
+    <h1>
+        Shipping Information
+    </h1>
+</div>
+<form id = 'form1' method = 'post' class="info">
+    <div>
+        <label>First Name&nbsp&nbsp&nbsp&nbsp   </label>
+        <input type="text" name="first" required placeholder="Enter First Name"
+               oninvalid="this.setCustomValidity('Enter First Name Here')"
+               oninput="setCustomValidity('')"><br>
+        <label>Last Name&nbsp&nbsp&nbsp&nbsp     </label>
+        <input type="text" name="last" required placeholder="Enter Last Name"
+               oninvalid="this.setCustomValidity('Enter Last Name Here')"
+               oninput="setCustomValidity('')"><br>
+        <label>Item Selected </label>
+        <input type="text" name="last" required value="item"><br>
+        <label>Price&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+        <input type="text" name="last" required value="10">
+
+
+    </div>
+    <div>
+        <h5> Address Information::</h5>
+        <label>Street Address1 </label>
+        <input type="text" name="stAdd1" required placeholder="Enter Street Address"
+               oninvalid="this.setCustomValidity('Enter Street Address Here')"
+               oninput="setCustomValidity('')"><br>
+        <label>Street Address2 </label>
+        <input type="text" name="stAdd2" ><br>
+        <label>City &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+        <input type="text" name="city" required placeholder="Enter City"
+               oninvalid="this.setCustomValidity('Enter City Here')"
+               oninput="setCustomValidity('')"><br>
+        <label>Pincode &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+        <input type="text" name="pincode" required placeholder="Enter Pincode"
+               oninvalid="this.setCustomValidity('Enter Pincode Here')"
+               oninput="setCustomValidity('')">
+
+    </div>
+    <div>
+        <h5>Please Select Shipping Type</h5>
+        <input type="radio" name="shippingType" value="st1" checked>Standard <lable>Free</lable><br>
+        <input type="radio" name="shippingType" value="day2">2nd Day <lable>$10</lable><br>
+        <input type="radio" name="shippingType" value="overNight">Over Night <lable>$20</lable><br>
+    </div>
+<label>Please Submit Given Details</label>
+    <input type="submit" onclick="validateFunction()" value="SUBMIT">
+</form>
+
+</body>
+</html>

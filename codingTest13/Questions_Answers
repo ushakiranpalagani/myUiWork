@@ -1,0 +1,65 @@
+2. what is the command to check which modules installed?
+  To check what modules are installed,
+  At the command prompt, type
+  npm ls
+
+2.what is the command to install npm globally?
+    We get npm as part of node js installation,
+    To make it available globally, there are two ways,
+    1) change/edit/append the node js path to the environment variable PATH
+    2) we use npm itself to make it available globally
+       npm install npm -g
+       the above command gives the latest version of npm and also makes it available globally
+
+3.how can we make our own modules in nodejs?
+    myModule.js
+    -----------
+    var myModule = function(){
+                    var add = function(a,b){
+                        return (a+b);
+                    }
+                };
+     module.exports = myModule;
+
+     useCustomModule.js
+     ------------------
+     var my module = require('/myModule');
+     console.log('adding Two Numbers'+ myModule.add(4,5));
+
+
+
+4.what is the use of lodash nodemodule?
+   Lodash module is very useful in handling utility functions on arrays, colletions , date etc.
+
+5.Assume my file name "Whitebox.txt" which contains the text "A complete learning system to
+  enhance developers, designers and quality engineers."
+
+consider the code below:
+
+var fs = require('fs');
+
+var contents = fs.readFileSync('whitebox.txt','utf8');
+
+console.log(contents);
+
+console.log('hellow world');
+
+what will it print on console?
+
+Output:
+undefined
+hellow world
+
+if we modify above code like below
+    fs.readFileSync('whitebox.txt','utf8',function(error,contents){
+        if(error){
+            return error.toString();
+        }
+        else
+            console.log(contents.toString());
+    });
+    console.log('hello world');
+
+    output:
+    "A complete learning system to enhance developers, designers and quality engineers."
+    'hello world'

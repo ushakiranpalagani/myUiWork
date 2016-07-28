@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            padding:50px;
+            color:blue;
+            font:14px "Lucida Grande", Helvetica, Arial, sans-serif;
+        }
+        div {
+            border:5px;
+            border-style:double;
+            padding:20px;
+            width:350px;
+            margin: 20px;
+            align:center;
+        }
+        input {
+            display: block;
+            margin: 0;
+            width: 100%;
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="loginApp" ng-controller="loginCtrl">
+<div>
+    <h2>
+        Please Provide Login Details
+    </h2>
+</div>
+<form id = 'form1' method = 'post' class="info">
+    <div>
+        <fieldset ng-disabled="isSuccess" style="border: none">
+        <input type="text" ng-model="fname" required placeholder="Enter First Name"
+               oninvalid="this.setCustomValidity('Enter First Name Here')"
+               oninput="setCustomValidity('')"><br>
+        <input type="text" ng-model="lname" required placeholder="Enter Last Name"
+               oninvalid="this.setCustomValidity('Please Enter Last Name Here')"
+               oninput="setCustomValidity('')"><br>
+        <input type="email" ng-model="email" required placeholder="Enter Email Address"
+               oninvalid="this.setCustomValidity('Please Enter Email Address Here')"><br>
+        <input type="password" ng-model="password" required placeholder="Enter Password"
+               oninvalid="this.setCustomValidity('Please Enter Password Here')">
+        <br>
+        <input type="submit"  ng-click="loginCheck()" value="LOGIN">
+    </fieldset>
+    </div>
+    <div ng-if="loginSuccess">
+        Successfully Logged in!!!!!
+
+
+    </div>
+
+</form>
+
+</body>
+</html>
